@@ -1,13 +1,13 @@
 {
-  "name": "gatsby-starter-ghost",
-  "description": "A starter template to build lightning fast websites with Ghost and Gatsby",
+  "name": "lucarossi.io",
+  "description": "A template to build a blog with Ghost and Gatsby",
   "version": "1.0.0",
   "license": "MIT",
-  "author": "Ghost Foundation",
-  "homepage": "https://docs.ghost.org/api/gatsby/",
+  "author": "Luca Rossi",
+  "homepage": "https://lucarossi.io",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tryghost/gatsby-starter-ghost.git"
+    "url": "git+https://github.com/lucaronin/lucarossi.io.git"
   },
   "resolutions": {
     "sharp": "0.25.3"
@@ -16,11 +16,12 @@
     "node": ">= 10.13.0"
   },
   "bugs": {
-    "url": "https://github.com/tryghost/gatsby-starter-ghost/issues"
+    "url": "https://github.com/lucaronin/lucarossi.io/issues"
   },
   "keywords": [
     "gatsby",
-    "ghost"
+    "ghost",
+    "tailwind"
   ],
   "main": "n/a",
   "scripts": {
