@@ -5,8 +5,9 @@ module.exports = () => {
         plugins: [
             require(`tailwindcss`),
             purgecss({
-                content: [`./layouts/**/*.html`, `./src/**/*.js`],
+                content: [`./src/**/*.js`],
                 defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+                whitelistPatterns: [/^font/, /^text/, /^border/, /^bg/],
             }),
         ],
     }

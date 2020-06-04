@@ -36,14 +36,14 @@ const Post = ({ data, location }) => {
                     <div className="max-w-screen-md m-auto sm:px-8 px-4 pb-8">
                         <header className="pt-8 mb-8">
                             <Link to="/">
-                                <p className="text-blue-600 sm:text-lg mb-8">← {site.title}</p>
+                                <p className="text-blue-600 font-medium sm:text-lg mb-8">← {site.title}</p>
                             </Link>
                             <div className="text-red-500 text-sm font-medium uppercase">
                                 <time>{formatDate(post.published_at)}</time>
                                 <span className="px-1">&bull;</span>
                                 <span>{readingTime}</span>
                             </div>
-                            <h1 className="text-2xl sm:text-3xl mb-4">{post.title}</h1>
+                            <h1 className="text-2xl sm:text-3xl font-medium mb-4">{post.title}</h1>
                             <p className="text-gray-500">{post.excerpt}</p>
                         </header>
                         <article>
