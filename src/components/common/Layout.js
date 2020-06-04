@@ -34,7 +34,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     <header className="bg-gray-700">
                         <div className="flex flex-col max-w-screen-md m-auto sm:px-8 px-4 py-8">
                             <nav className="flex flex-row justify-between text-white">
-                                <div className="flex flex-row items-center">
+                                <div className="flex flex-row w-full items-center justify-center sm:justify-start">
                                     <Link to="/">
                                         <h1 className="sm:text-lg">{site.title}</h1>
                                     </Link>
@@ -42,15 +42,19 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                 </div>
                             </nav>
                             { isHome ?
-                                <div className="max-w-xl text-white py-8 sm:py-12">
-                                    <p className="text-xl sm:text-2xl">
-                                        Hey! 👋 I am Luca — I am an entrepreneur, developer, and periodic musician.
-                                    </p>
-                                    <p className="text-base font-normal text-gray-400">
-                                        I co-founded <a className="hover:text-red-300 transition ease-in duration-100" href="https://wanderio.com" rel="noopener noreferrer" target="_blank"> @wanderio</a>. I like creating things on the internet.
-                                    </p>
-                                </div> :
-                                null}
+                                <div className="flex flex-col sm:flex-row-reverse items-center sm:items-start flex-wrap py-8 sm:py-12">
+                                    <div>
+                                        <img className="mb-4 sm:mb-0 sm:-mt-3 rounded-full h-24 w-24 sm:mr-6 mr-0" src="https://p8.f1.n0.cdn.getcloudapp.com/items/2Nu51OD2/JjPQ0BM__400x400.jpg"></img>
+                                    </div>
+                                    <div className="max-w-lg text-white">
+                                        <p className="text-xl text-center sm:text-left sm:text-2xl">
+                                            Hey! 👋 I am Luca — I am an entrepreneur, developer, and periodic musician.
+                                        </p>
+                                        <p className="text-base text-center sm:text-left font-normal text-gray-400">
+                                            I co-founded <a className="hover:text-red-300 transition ease-in duration-100" href="https://wanderio.com" rel="noopener noreferrer" target="_blank"> @wanderio</a>. I like creating things on the internet.
+                                        </p>
+                                    </div>
+                                </div> : null}
                         </div>
                     </header>
                 }
