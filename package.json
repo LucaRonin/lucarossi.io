@@ -38,6 +38,7 @@
     "eslint-plugin-react": "7.20.0"
   },
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.2.0",
     "@tailwindcss/ui": "^0.3.0",
     "@tryghost/helpers": "1.1.27",
     "@tryghost/helpers-gatsby": "1.0.31",
