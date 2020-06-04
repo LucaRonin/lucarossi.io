@@ -47,7 +47,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                         Hey! 👋 I am Luca — I am an entrepreneur, developer, and periodic musician.
                                     </p>
                                     <p className="text-base font-normal text-gray-400">
-                                        I co-founded <a className="hover:text-red-300 transition ease-in duration-100" href="https://wanderio.com" rel="noopener noreferrer" target="_blank"> @wanderio</a> in 2012. I like creating things on the internet.
+                                        I co-founded <a className="hover:text-red-300 transition ease-in duration-100" href="https://wanderio.com" rel="noopener noreferrer" target="_blank"> @wanderio</a>. I like creating things on the internet.
                                     </p>
                                 </div> :
                                 null}
