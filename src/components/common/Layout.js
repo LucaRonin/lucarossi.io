@@ -2,10 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 
 import { Navigation } from '.'
-import config from '../../utils/siteConfig'
 
 // Styles
 import '../../styles/app.css'
@@ -21,7 +19,6 @@ import '../../styles/app.css'
 const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
-    const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
 
     return (
         <>
@@ -31,61 +28,51 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 <body className={bodyClass} />
             </Helmet>
 
-            <div className="viewport">
-
-                <div className="viewport-top">
+            <div className="bg-gray-100">
+                <div>
                     {/* The main header section on top of the screen */}
-                    <header className="site-head" style={{ ...site.cover_image && { backgroundImage: `url(${site.cover_image})` } }}>
-                        <div className="container">
-                            <div className="site-mast">
-                                <div className="site-mast-left">
-                                    <Link to="/">
-                                        {site.logo ?
-                                            <img className="site-logo" src={site.logo} alt={site.title} />
-                                            : <Img fixed={data.file.childImageSharp.fixed} alt={site.title} />
-                                        }
-                                    </Link>
-                                </div>
-                                <div className="site-mast-right">
-                                    { site.twitter && <a href={ twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
-                                    { site.facebook && <a href={ facebookUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/facebook.svg" alt="Facebook" /></a>}
-                                    <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${config.siteUrl}/rss/` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
-                                </div>
+                    { isHome &&
+                        <header className="bg-gray-700">
+                            <div className="flex flex-col max-w-screen-md m-auto sm:px-8 px-4 py-8">
+                                <nav className="flex flex-row justify-between text-white">
+                                    <div>
+                                        <Link to="/">
+                                            <h1 className="sm:text-lg">{site.title}</h1>
+                                        </Link>
+                                    </div>
+                                    <div>
+                                        <Link to="/about">
+                                            <span className="sm:text-lg">About</span>
+                                        </Link>
+                                    </div>
+                                </nav>
+                                { isHome ?
+                                    <div className="max-w-xl text-white py-8 sm:py-12">
+                                        <p className="text-xl sm:text-2xl">{site.description}</p>
+                                    </div> :
+                                    null}
                             </div>
-                            { isHome ?
-                                <div className="site-banner">
-                                    <h1 className="site-banner-title">{site.title}</h1>
-                                    <p className="site-banner-desc">{site.description}</p>
-                                </div> :
-                                null}
-                            <nav className="site-nav">
-                                <div className="site-nav-left">
-                                    {/* The navigation items as setup in Ghost */}
-                                    <Navigation data={site.navigation} navClass="site-nav-item" />
-                                </div>
-                                <div className="site-nav-right">
-                                    <Link className="site-nav-button" to="/about">About</Link>
-                                </div>
-                            </nav>
-                        </div>
-                    </header>
+                        </header>
+                    }
 
-                    <main className="site-main">
+                    <main>
                         {/* All the main content gets inserted here, index.js, post.js */}
                         {children}
                     </main>
 
                 </div>
 
-                <div className="viewport-bottom">
+                <div>
                     {/* The footer at the very bottom of the screen */}
-                    <footer className="site-foot">
-                        <div className="site-foot-nav container">
-                            <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> © 2019 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
+                    <footer className="bg-gray-800">
+                        <div className="flex flex-row justify-between max-w-screen-md m-auto pt-4 pb-16 sm:px-8 px-4 text-white">
+                            <div>
+                                <Link to="/">{site.title} © 2020</Link>
                             </div>
-                            <div className="site-foot-nav-right">
-                                <Navigation data={site.navigation} navClass="site-foot-nav-item" />
+                            <div>
+                                <Link to="/about">
+                                    <span>About</span>
+                                </Link>
                             </div>
                         </div>
                     </footer>
