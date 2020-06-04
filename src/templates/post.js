@@ -32,7 +32,7 @@ const Post = ({ data, location }) => {
                 <style type="text/css">{`${post.codeinjection_styles}`}</style>
             </Helmet>
             <Layout>
-                <div className="w-full bg-gray-50">
+                <div className="w-full bg-white">
                     <div className="max-w-screen-md m-auto sm:px-8 px-4 pb-8">
                         <header className="pt-8 mb-8">
                             <Link to="/">

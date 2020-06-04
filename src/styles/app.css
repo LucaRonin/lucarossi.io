@@ -28,11 +28,11 @@ body {
 }
 
 h2 {
-  @apply text-2xl mb-4
+  @apply text-2xl font-medium mt-8 mb-4
 }
 
 h3 {
-  @apply text-xl font-medium mb-4
+  @apply text-xl font-medium my-4
 }
 
 section, p {
@@ -48,7 +48,7 @@ figure {
 }
 
 pre {
-  @apply mt-2 mb-6 rounded-md bg-gray-200
+  @apply mt-2 mb-6 p-4 rounded-md bg-gray-100
 }
 
 li {
@@ -56,7 +56,7 @@ li {
 }
 
 pre code {
-  @apply font-mono text-base leading-normal
+  @apply font-mono text-sm text-red-600 leading-normal
 }
 
 blockquote {
@@ -197,11 +197,10 @@ figcaption {
 }
 
 .kg-bookmark-container {
-    @apply bg-white rounded-md shadow flex;
+    @apply bg-gray-100 rounded-md flex;
 }
 
 .kg-bookmark-container:hover {
-    color: var(--darkgrey);
     text-decoration: none;
     box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
 }

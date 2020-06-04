@@ -17,7 +17,7 @@ const PostCard = ({ post }) => {
                     <span>{readingTime}</span>
                 </div>
                 <Link to={url}>
-                    <h2 className="mb-2 text-xl font-semibold">{post.title}</h2>
+                    <h2 className="mt-0 mb-2 text-xl font-semibold">{post.title}</h2>
                 </Link>
             </header>
             <section className="text-gray-500 font-base">{post.excerpt}</section>
