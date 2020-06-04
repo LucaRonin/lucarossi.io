@@ -184,5 +184,12 @@ module.exports = {
         `gatsby-plugin-force-trailing-slashes`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-postcss`,
+        {
+            resolve: `gatsby-plugin-canonical-urls`,
+            options: {
+                siteUrl: `https://lucarossi.io`,
+                stripQueryString: true,
+            },
+        },
     ],
 }

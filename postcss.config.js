@@ -4,11 +4,11 @@ module.exports = () => {
     return {
         plugins: [
             require(`tailwindcss`),
-            purgecss({
+            process.env.NODE_ENV === `production` ? purgecss({
                 content: [`./src/**/*.js`],
                 defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
                 whitelistPatterns: [/^font/, /^text/, /^border/, /^bg/],
-            }),
+            }) : null,
         ],
     }
 }
