@@ -66,7 +66,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
                 <div>
                     {/* The footer at the very bottom of the screen */}
-                    <footer className="bg-gray-800">
+                    <footer className="bg-gray-700">
                         <div className="flex flex-row justify-between max-w-screen-md m-auto pt-4 pb-16 sm:px-8 px-4 text-white">
                             <Link to="/">{site.title} © 2020</Link>
                         </div>
